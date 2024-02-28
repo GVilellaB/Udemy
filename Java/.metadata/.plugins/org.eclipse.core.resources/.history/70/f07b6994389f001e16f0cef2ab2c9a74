@@ -1,0 +1,40 @@
+package uri;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.Locale;
+public class atv {	
+
+	public static void main(String[] args) throws IOException{ 
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		String s;
+        String dia = sc.next();
+        int ndia = sc.nextInt();
+        int horas = sc.nextInt();
+        s = sc.next();
+        int min = sc.nextInt();
+        s = sc.next();
+        int sec = sc.nextInt();
+        String dia2 = sc.next();
+        int ndia2 = sc.nextInt();
+        int horas2 = sc.nextInt();
+        s = sc.next();
+        int min2 = sc.nextInt();
+        s = sc.next();
+        int sec2 = sc.nextInt();
+        
+        int difdia = (((ndia2-ndia)*24*60*60)-(((((8*60)+12)*60)+23)+((((6*60)+13)*60)+23)))/60*60*24;
+        int difhora = ((ndia2*24)+horas2)-((ndia*24)+horas);
+        int difmin = ((((ndia2*24)+horas2)*60)+min2)-((((ndia*24)+horas)*60)+min);
+        int difsec = ((((((ndia2*24)+horas2)*60)+min2)*60)+sec2)-((((((ndia*24)+horas)*60)+min)*60)+sec);
+        
+        System.out.println(difdia + "dia(s)");
+        System.out.println(difhora + "hora(s)");
+        System.out.println(difmin + "minuto(s)");
+        System.out.println(difsec + "segundo(s)");
+        
+        sc.close();
+	    }
+
+	}
+
